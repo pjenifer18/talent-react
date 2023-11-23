@@ -1,0 +1,18 @@
+.menu{
+border-radius: 0 !important;
+}
+
+.active-pag-item {
+  background-color: #2185d0 !important; 
+  color: #fff !important;
+}
+
+.page-wrap{
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+
+.text-danger {
+  color: rgb(255, 105, 105);
+}
