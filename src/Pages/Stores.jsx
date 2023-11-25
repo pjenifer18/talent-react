@@ -25,7 +25,7 @@ const Stores = () => {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        "https://localhost:7058/api/StoreModel/"
+        "http://localhost:80/api/StoreModel/"
       );
       setStoresData(response.data);
     } catch (error) {
@@ -158,11 +158,11 @@ const Stores = () => {
       try {
         if (currentModal.action === "edit") {
           await axios.put(
-            `https://localhost:7058/api/StoreModel/{id}?StoreId=${currentModal.id}`,
+            `http://localhost:80/api/StoreModel/{id}?StoreId=${currentModal.id}`,
             payload
           );
         } else {
-          await axios.post("https://localhost:7058/api/StoreModel/", payload);
+          await axios.post("http://localhost:80/api/StoreModel/", payload);
         }
 
         fetchData();
@@ -210,7 +210,7 @@ const Stores = () => {
   const deleteRow = async () => {
     try {
       await axios.delete(
-        `https://localhost:7058/api/StoreModel/${currentModal.id}`
+        `http://localhost:80/api/StoreModel/${currentModal.id}`
       );
       fetchData();
       onCloseModal();

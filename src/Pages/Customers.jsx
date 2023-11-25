@@ -23,7 +23,7 @@ const Customers = () => {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        "https://localhost:7058/api/CustomerModel/"
+        "http://localhost:80/api/CustomerModel/"
       );
       setCustomersData(response.data);
     } catch (error) {
@@ -154,12 +154,12 @@ const Customers = () => {
       try {
         if (currentModal.action === "edit") {
           await axios.put(
-            `https://localhost:7058/api/CustomerModel/{id}?CustomerId=${currentModal.id}`,
+            `http://localhost:80/api/CustomerModel/{id}?CustomerId=${currentModal.id}`,
             payload
           );
         } else {
           await axios.post(
-            "https://localhost:7058/api/CustomerModel/",
+            "http://localhost:80/api/CustomerModel/",
             payload
           );
         }
@@ -209,7 +209,7 @@ const Customers = () => {
   const deleteRow = async () => {
     try {
       await axios.delete(
-        `https://localhost:7058/api/CustomerModel/{id}?CustomerId=${currentModal.id}`
+        `http://localhost:80/api/CustomerModel/{id}?CustomerId=${currentModal.id}`
       );
       fetchData();
       onCloseModal();
