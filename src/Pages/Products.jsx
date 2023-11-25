@@ -31,7 +31,7 @@ const Products = () => {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:80/api/ProductModel/"
+        "http://20.198.254.87:80/api/ProductModel/"
       );
       setProductsData(response.data);
     } catch (error) {
@@ -161,11 +161,11 @@ const Products = () => {
       try {
         if (currentModal.action === "edit") {
           await axios.put(
-            `http://localhost:80/api/ProductModel/{id}?ProductId=${currentModal.id}`,
+            `http://20.198.254.87:80/api/ProductModel/{id}?ProductId=${currentModal.id}`,
             payload
           );
         } else {
-          await axios.post("http://localhost:80/api/ProductModel/", payload);
+          await axios.post("http://20.198.254.87:80/api/ProductModel/", payload);
         }
 
         fetchData();
@@ -213,7 +213,7 @@ const Products = () => {
   const deleteRow = async () => {
     try {
       await axios.delete(
-        `http://localhost:80/api/ProductModel/${currentModal.id}`
+        `http://20.198.254.87:80/api/ProductModel/${currentModal.id}`
       );
       fetchData();
       onCloseModal();

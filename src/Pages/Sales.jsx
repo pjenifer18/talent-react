@@ -26,7 +26,7 @@ const Sales = () => {
   // Function to fetch data using Axios
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://localhost:80/api/SaleModel/");
+      const response = await axios.get("http://20.198.254.87:80/api/SaleModel/");
       setProductsData(response.data);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -179,13 +179,13 @@ const Sales = () => {
           console.log("Inside sales edit");
           console.log(payload)
           await axios.put(
-            `http://localhost:80/api/SaleModel/{id}?SaleId=${currentModal.id}`,
+            `http://20.198.254.87:80/api/SaleModel/{id}?SaleId=${currentModal.id}`,
             payload
           );
         } else {
           console.log("Inside sales add");
           console.log(payload)
-          await axios.post("http://localhost:80/api/SaleModel/", payload);
+          await axios.post("http://20.198.254.87:80/api/SaleModel/", payload);
         }
 
         fetchData();
@@ -252,7 +252,7 @@ const Sales = () => {
   const deleteRow = async () => {
     try {
       await axios.delete(
-        `http://localhost:80/api/SaleModel/${currentModal.id}`
+        `http://20.198.254.87:80/api/SaleModel/${currentModal.id}`
       );
       fetchData();
       onCloseModal();
